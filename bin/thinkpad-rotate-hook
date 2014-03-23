@@ -26,6 +26,4 @@ command="env DISPLAY=:0.0 kdialog=false /usr/bin/thinkpad-rotate $setto"
 
 logger -t thinkpad-rotate-hook -i -- $"Will run “$command”."
 
-su -c "$command" --login "$user" &
-
-disown
+sudo -u "$user" -i $command
